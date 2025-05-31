@@ -1,0 +1,48 @@
+{
+    "name": "ooptraining",
+    "version": "1.0.0",
+    "description": "a quick demo of setting up an api using typescript and oop fundamentals with database connections",
+    "main": "src/index.ts",
+    "scripts": {
+        "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "lint": "eslint . --ext .ts",
+        "lint:fix": "eslint . --ext .ts --fix",
+        "prettier": "prettier --write 'src/**/*.{ts,js,json,md}'",
+        "prettier:check": "prettier --check 'src/**/*.{ts,js,json,md}'",
+        "format": "npm run prettier && npm run prettier:check",
+        "format:fix": "npm run prettier && npm run prettier:check && npm run lint:fix",
+        "clean": "rm -rf dist && rm -rf node_modules",
+        "clean:all": "npm run clean && npm cache clean --force",
+        "postinstall": "npm run build",
+        "postbuild": "tsc --outDir dist",
+        "prestart": "npm run build",
+        "predev": "npm run build",
+        "pretest": "echo \"No tests specified\"",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "itsdevkay (Keanu Almaguer)",
+    "license": "ISC",
+    "dependencies": {
+        "@types/bcrypt": "^5.0.2",
+        "bcrypt": "^6.0.0",
+        "cors": "^2.8.5",
+        "express": "^5.1.0",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^8.15.1",
+        "stripe": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.18",
+        "@types/express": "^5.0.2",
+        "@types/jsonwebtoken": "^9.0.9",
+        "@types/node": "^22.15.29",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.8.3"
+    },
+    "files": [
+        "src",
+        "dist"
+    ]
+}
